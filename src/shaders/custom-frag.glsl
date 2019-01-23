@@ -26,12 +26,12 @@ out vec4 out_Col; // This is the final output color that you will see on your
 void main()
 {
     // Material base color (before shading)
-		float corner = (((fs_Nor.x + fs_Nor.y + fs_Nor.z) / 6.0) + 1.0) / 2.0;
-		float corner2 = (((fs_Nor.x - fs_Nor.y + fs_Nor.z) / -4.0) + 1.0) / 2.0;
-		float corner3 = (((fs_Nor.x + fs_Nor.y - fs_Nor.z) / -6.0) + 1.0) / 2.0;
-		vec4 diffuseColor = vec4(cos(float(u_fTime) / 5.0) * corner + 0.5, 
-								cos(float(u_fTime) / 20.0) * corner2 + 0.5, 
-								cos(float(u_fTime) / 35.0) * corner3 + 0.5, 1);
+		float corner = (((fs_Nor.x + fs_Nor.x + fs_Nor.x) / 6.0) + 1.0) / 2.0;
+		float corner2 = (((fs_Nor.y + fs_Nor.y + fs_Nor.y) / -4.0) + 1.0) / 2.0;
+		float corner3 = (((fs_Nor.z + fs_Nor.z + fs_Nor.z) / -2.0) + 1.0) / 2.0;
+		vec4 diffuseColor = vec4(cos(float(u_fTime) / 15.0) * corner + 0.5, 
+								cos(float(u_fTime) / 15.0) * corner2 + 0.5, 
+								cos(float(u_fTime) / 15.0) * corner3 + 0.5, 1);
       
           // Compute final shaded color
         out_Col = diffuseColor;
